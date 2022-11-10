@@ -1,0 +1,26 @@
+{
+  "name": "angular-class-work",
+  "version": "1.0.0",
+  "description": "angular-class-work",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lev-Kin/angular-class-work.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lev-Kin/angular-class-work/issues"
+  },
+  "homepage": "https://github.com/Lev-Kin/angular-class-work#readme",
+  "dependencies": {
+    "@angular/cli": "^14.2.9",
+    "bootstrap": "^5.2.2"
+  },
+  "devDependencies": {
+    "cowsay": "^1.5.0"
+  }
+}
