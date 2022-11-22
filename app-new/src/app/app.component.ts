@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'app-new';
+  title = 'Pipes and Directives';
   text = 'To be or not to be...';
   name = 'adfadf';
 
