@@ -1,0 +1,12 @@
+<div class="contener">
+    <h3 [ngClass]="{
+        'text-center': true
+    }">
+        Деректива ngIF
+    </h3>
+    <p *ngIf="true">Lorem, ipsum dolor.</p>
+    <p *ngIf="false">Lorem, ipsum dolor.</p>
+
+    Ведите возраст <input type="text" [(ngModel)]="age">
+    <p *ngIf="age > 18">Разрешить просмотр содержимого</p>
+</div>

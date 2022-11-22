@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class NgStyleComponent implements OnInit {
 
   color = "blue";
+  large = true;
 
   constructor() { }
 
@@ -20,6 +21,10 @@ export class NgStyleComponent implements OnInit {
     let b = Math.floor(Math.random() * 255);
 
     this.color = `rgb(${r}, ${g}, ${b})`
+  }
+
+  toggle(): void {
+    this.large = !this.large;
   }
 
 }

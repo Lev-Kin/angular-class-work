@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { PipesComponent } from './pipes/pipes.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
+import { NgClassComponent } from './ng-class/ng-class.component';
+import { NgIfComponent } from './ng-if/ng-if.component';
 
 
 @NgModule({
@@ -14,6 +16,8 @@ import { NgStyleComponent } from './ng-style/ng-style.component';
     AppComponent,
     PipesComponent,
     NgStyleComponent,
+    NgClassComponent,
+    NgIfComponent,
   ],
   imports: [
     BrowserModule,

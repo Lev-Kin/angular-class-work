@@ -1,0 +1,15 @@
+<div class="contener">
+    <h3 class="text-center">Деректива ngClass</h3>
+    <p [ngClass]="{
+        red: true
+    }">
+        Lorem ipsum dolor sit amet.
+    </p>
+
+    <p [ngClass]="{
+        large: letterLarge
+    }">Lorem, ipsum dolor.</p>
+    <button (click)="toggle()">Переключить</button>
+
+    <p [ngClass]="cssClass">Lorem, ipsum dolor.</p>
+</div>

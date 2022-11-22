@@ -4,4 +4,12 @@
     <p [style.color]="color">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorem eius aut,
         sapiente consequatur est?</p>
     <button (click)="changeColor()">Изменить цвет</button>
+    <br>
+    <p [ngStyle]="{
+        backgroundColor: 'yellow',
+        color: color,
+        fontSize: large ? '3em' : '1em',
+        visigility: 'hidden'
+    }">Lorem ipsum dolor, sit amet consectetur adipisicing elit. A, fugiat?</p>
+<button (click)="toggle()">Переключить</button>
 </div>
