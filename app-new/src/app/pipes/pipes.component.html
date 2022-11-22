@@ -1,0 +1,22 @@
+<div>
+    <h2 class="text-center">Pipes</h2>
+    <p>date - {{ date | date }}</p>
+    <p>date - {{ date | date:'medium' }}</p>
+    <p>date - {{ date | date:'short' }}</p>
+    <p>date - {{ date | date:'d M y' }}</p>
+    <p>date - {{ date | date:'y M d' }}</p>
+    <p>date - {{ date | date:'hh:mm:yyyy' }}</p>
+    <p>date - {{ date | date:'HH:mm:yyyy' }}</p>
+    <div>
+        <h3>NumgerPipe</h3>
+        <p>&pi; = {{pi}}</p>
+        <p>&pi; = {{pi | number: "1.1-2"}}</p>
+        <p>Проценты = {{0.5 | percent}}</p>
+    </div>
+    <div>
+        <h3>StingPipe</h3>
+        <p>titile - {{title | uppercase}}</p>
+        <p>titile - {{title | lowercase}}</p>
+        <p>titile - {{title}}</p>
+    </div>
+</div>

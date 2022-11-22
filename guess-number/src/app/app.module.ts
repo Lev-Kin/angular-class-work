@@ -3,22 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// для работы с формами и привязки данных
-import { FormsModule } from '@angular/forms';
-import { PipesComponent } from './pipes/pipes.component';
-import { NgStyleComponent } from './ng-style/ng-style.component';
-
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PipesComponent,
-    NgStyleComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
