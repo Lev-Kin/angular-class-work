@@ -1,0 +1,11 @@
+<div [ngClass]="{container: true}">
+    <h3 [ngClass]="{'text-center': true}">Деректива ngFor</h3>
+    <ol> Goods
+        <li *ngFor="let item of products">{{item}}</li>
+    </ol>
+
+    <ol> Goods sort
+        <li *ngFor="let item of sortedList()">{{item}}</li>
+    </ol>
+
+</div>

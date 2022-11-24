@@ -1,0 +1,14 @@
+<div class="container">
+    <h3 [ngClass]="{'text-center': true}">Деректива ngSwitch</h3>
+    <ul [ngSwitch]="choice">
+        <li *ngSwitchCase="1">One</li>
+        <li *ngSwitchCase="2">Two</li>
+        <li *ngSwitchCase="3">Three</li>
+        <li *ngSwitchCase="1">Four</li>
+        <li *ngSwitchCase="2">Five</li>
+    </ul>
+
+    <button (click)="nextChoice()">ngSwitch</button>
+
+
+</div>
