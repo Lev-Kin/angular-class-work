@@ -1,0 +1,18 @@
+.container {
+    width: 80vw;
+    margin: auto;
+}
+
+.success {
+    background-color: rgb(75, 140, 75);
+    color: white;
+    font-weight: bold;
+    padding: 0.3em;
+}
+
+.fail {
+    background-color: rgb(146, 83, 83);
+    color: white;
+    font-weight: bold;
+    padding: 0.3em;
+}
