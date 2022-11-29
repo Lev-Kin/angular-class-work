@@ -1,20 +1,26 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
-  styleUrls: ['./child.component.css']
+  styleUrls: ['./child.component.css'],
 })
 export class ChildComponent implements OnInit {
-
   valueOne = 100;
-  valueTwo = "Two";
+  valueTwo = 'Two';
 
+  // декоратор для входных даных
   @Input() value!: string;
+  @Input() product: any;
 
-  constructor() { }
+  // декоратор для выходных данных
+  @Output() onClicked = new EventEmitter<string>;
 
-  ngOnInit(): void {
+  constructor() {}
+
+  generateEvent(): void {
+    this.onClicked.emit("transfer data");
   }
 
+  ngOnInit(): void {}
 }

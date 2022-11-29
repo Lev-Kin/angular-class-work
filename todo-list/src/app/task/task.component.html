@@ -1,0 +1,11 @@
+<div class="row" [ngClass]="{
+    done: task.done ? true : false,
+    current: task.done ? false : true
+}">
+    <div>
+        {{index}}.
+        {{task.text}}
+    </div>
+    <button (click)="done()">Done</button>
+    <button (click)="delete()">Delete</button>
+</div>

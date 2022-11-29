@@ -1,9 +1,9 @@
 <h3>Дочерний компонент</h3>
 <p>
-    valueOne - {{ valueOne }} <br>
-    valueTwo - {{ valueTwo }} <br>
+  valueOne - {{ valueOne }} <br />
+  valueTwo - {{ valueTwo }}
 </p>
-<h3>Значения, полученые из главного компанента</h3>
-<p>
-    value - {{ value }} <br>
-</p>
+<h3>Значения, полученные из главного компонента</h3>
+<p>value - {{ value }}</p>
+<p>name - {{ product.name }}, processor - {{ product.processor }}</p>
+<button (click)="generateEvent()">Передать данные</button>

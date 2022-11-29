@@ -1,25 +1,17 @@
-<h1
-  [ngStyle]="{
+<h1 [ngStyle]="{
     'text-align': 'center',
     color: 'blue',
     'font-size': '2em'
-  }"
->
+  }">
   {{ title }}
 </h1>
 
-<div class="container">
-  <input type="number" min="0" max="100" [(ngModel)]="guess" />
-  <button (click)="check()">Проверить</button>
-  <button (click)="reset()">Начать заново</button>
-  <p class="success" *ngIf="deviation == 0">Поздравляем. Вы угадали число!!!</p>
-  <p class="fail" *ngIf="deviation < 0 && deviation > -100">
-    Ваше число меньше. Попробуйте еще раз.
-  </p>
-  <p class="fail" *ngIf="deviation > 0">
-    Ваше число больше. Попробуйте еще раз.
-  </p>
-  <p>Количество попыток - {{ count }}</p>
-</div>
+<app-child [value]="title" [product]="products[0]"></app-child>
+<app-child 
+[value]="'Новые данные'"
+[product]="products[1]"
+(onClicked)="getData($event)">
+</app-child>
 
-<app-child [value]="'12312213'"></app-child>
+<h3>Данные из дочернего компонента</h3>
+<p>data - {{childData}}</p>

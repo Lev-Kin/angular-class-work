@@ -1,0 +1,18 @@
+.row {
+    display: flex;
+    margin: 0.5rem;
+}
+
+.row div {
+   min-width: 40%;
+}
+
+.done {
+    background-color: green;
+    color: white;
+}
+
+.current {
+    background-color: yellow;
+    color:white;
+}
