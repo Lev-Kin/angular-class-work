@@ -1,0 +1,9 @@
+<form class="container">
+    <label for="title">Ввидите название статьи</label>
+    <input type="text" name="title" #title>
+    <hr />
+    <label for="title">Ввидите адресс статьи</label>
+    <input type="text" name="url" #url>
+    <hr />    
+</form>
+<button (click)="add(title, url)">Добавить</button>

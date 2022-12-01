@@ -1,0 +1,4 @@
+<app-form (onClicked)="addArticle($event)"></app-form>
+<app-article *ngFor="let article of sortedList()"
+[item]="article"
+></app-article>

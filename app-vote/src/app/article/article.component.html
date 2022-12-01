@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="points">Points - {{item.voitePints}}</div>
+    <div>
+        <p>{{item.title}}</p>
+        <p><a [href]="item.url"> {{item.url}} </a></p>
+        <button (click)="voiteUp()">+</button>
+        <button (click)="voiteDown()">-</button>
+    </div>
+</div>
