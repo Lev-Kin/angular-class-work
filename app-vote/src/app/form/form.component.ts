@@ -1,5 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { IArticle } from '../model/model';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-form',
@@ -8,19 +8,19 @@ import { IArticle } from '../model/model';
 })
 export class FormComponent implements OnInit {
 
-  @Output() onClicked = new EventEmitter<IArticle>();
-
-  constructor() { }
+  constructor(private data: DataService) { }
 
   ngOnInit(): void {
   }
 
-  add(_title: HTMLInputElement, _url: HTMLInputElement) : void {
-    this.onClicked.emit({
+  add(_title: HTMLInputElement, _url: HTMLInputElement): void {
+
+    this.data.addArticle({
       title: _title.value,
       url: _url.value,
       voitePints: 1
-    })
+    });
+
     _title.value = '';
     _url.value = '';
   }

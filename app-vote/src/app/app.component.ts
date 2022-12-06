@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './data.service';
 import { IArticle } from './model/model';
 
 @Component({
@@ -8,30 +9,11 @@ import { IArticle } from './model/model';
 })
 export class AppComponent {
   title = 'app-vote';
-  list: IArticle[] = [
-    {
-      title: "angular",
-      url: "https://angular.io/",
-      voitePints: 5
-    },
-    {
-      title: "javascript",
-      url: "https://learn.javascript.ru/",
-      voitePints: 3
-    }
-  ];
 
-  addArticle(obj: IArticle): void {
-    this.list.push(obj);
-  }
-  
-  sortedList(): IArticle[] {
-    let arr = [...this.list]
-    this.list.sort((a: IArticle, b: IArticle) => {
-      return (b.voitePints! - a.voitePints!);
-    });
+  list: IArticle[] = [];
 
-    return arr;
+  constructor(private data: DataService) {
+    this.list = this.data.sortedList();
   }
 
 }

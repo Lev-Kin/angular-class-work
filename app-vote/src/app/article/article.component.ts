@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DataService } from '../data.service';
 import { IArticle } from '../model/model';
 
 @Component({
@@ -9,13 +10,14 @@ import { IArticle } from '../model/model';
 export class ArticleComponent implements OnInit {
   @Input() item!: IArticle;
 
-  constructor() { }
+  constructor(public data: DataService) { }
 
   ngOnInit(): void {
   }
 
   voiteUp(): void {
     this.item.voitePints!++;
+    this.data.sort();
   }
 
   voiteDown(): void {
@@ -23,6 +25,7 @@ export class ArticleComponent implements OnInit {
     if(this.item.voitePints! < 0){
       this.item.voitePints = 0;
     }
+    this.data.sort();
   }
 
 
