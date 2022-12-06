@@ -1,0 +1,5 @@
+<h1>{{title}}</h1>
+<button (click)="getData()">Получить данные</button>
+<button (click)="addData()">Добавить данные</button>
+<p *ngIf="loading">Загрузка</p>
+<pre *ngIf="!loading">{{data | json}}</pre>

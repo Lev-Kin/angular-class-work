@@ -1,0 +1,19 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "TV",
+            "price": 1800
+        },
+        {
+            "id": 1,
+            "name": "PC",
+            "price": 2700
+        },
+        {
+            "id": 1,
+            "name": "MicroWave",
+            "price": 300
+        }
+    ]
+}
