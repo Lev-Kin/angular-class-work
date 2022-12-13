@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProductList } from './model/repository';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'goods-app';
+  title = 'goods-store';
+  
+
+  constructor (private repository:ProductList) {
+  }
+
+  
+  
 }
