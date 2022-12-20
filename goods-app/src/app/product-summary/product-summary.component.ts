@@ -2,23 +2,20 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../model/model';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-product-summary',
   templateUrl: './product-summary.component.html',
-  styleUrls: ['./product-summary.component.css']
+  styleUrls: ['./product-summary.component.css'],
 })
 export class ProductSummaryComponent implements OnInit {
+  // данные извне
+  @Input() product!: Product;
 
-  @Input() product!:Product;
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  goToDetail(): void {
+    this.router.navigate(['product', this.product.id]);
   }
-
-  goToDetail() {
-    this.router.navigate(["product", this.product.id]);
-  }
-
 }

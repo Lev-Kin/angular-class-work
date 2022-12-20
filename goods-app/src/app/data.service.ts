@@ -3,27 +3,21 @@ import { Injectable } from '@angular/core';
 import { Product } from './model/model';
 // для выполнения запросов
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+// не забываем подключить модуль HttpClientModule  в app.module.ts
 // поддержка асинхронных запросов
-import { Observable} from 'rxjs';
-
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
-
-  url: string = "http://localhost:3000/products";
+  // для доступа к json-server
+  url = 'http://localhost:3000/products';
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders().set('Content-Type', 'application/json'),
   };
 
-  type: string = "";
-
-  
-  
-  constructor(private http: HttpClient) {
-    
-  }
+  constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.url);
@@ -42,19 +36,13 @@ export class DataService {
   }
 
   updateProduct(product: Product): Observable<Product> {
-    return this.http.put(this.url, product, this.httpOptions);
+    return this.http.put(
+      `${this.url}/${product.id}`,
+      product,
+      this.httpOptions
+    );
   }
 
-  // для работы с категориями
-  get Type() {
-    return this.type;
-  }
-
-  set Type(value: string) {
-    this.type = value;
-  }
-
-
-
-
+  // для категорий
+  category = "";
 }

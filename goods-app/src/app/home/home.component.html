@@ -1,11 +1,12 @@
-<h3>Список товаров</h3>
-<div class="spinner-border text-primary" role="status" *ngIf="isLoading">
-  <span class="visually-hidden">Loading...</span>
+<div>
+  <h3>Список товаров</h3>
+  <div class="spinner-border text-primary" role="status" *ngIf="isLoading">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div *ngIf="!isLoading">
+    <app-product-summary
+      *ngFor="let product of filteredList()"
+      [product]="product"
+    ></app-product-summary>
+  </div>
 </div>
-<div *ngIf="!isLoading">
-  <app-product-summary
-  *ngFor="let product of filtr()"
-  [product]="product"
-></app-product-summary>
-</div>
-

@@ -1,37 +1,52 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../model/model';
+// для доступа к данным
 import { DataService } from '../data.service';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
+// для работы с маршрутами и программной маршрутизацией
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css']
+  styleUrls: ['./product-detail.component.css'],
 })
 export class ProductDetailComponent implements OnInit {
-
-  id: number;
-  products: Product[] = [];
+  isLoading = false;
   product!: Product;
-  isLoading: boolean = true;
+  id!: number;
+  allowed = false;
 
-  constructor(private data: DataService, private activateRoute: ActivatedRoute, private router: Router) {
-    this.id = activateRoute.snapshot.params['id'];
-  }
+  constructor(
+    private data: DataService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.data.getProducts().subscribe(data => {
-      this.product = data.find(p => p.id == this.id)!;
-    })
+    this.isLoading = true;
+    // получение параметра маршрута
+    this.id = +this.activatedRoute.snapshot.params['id']!;
+    // получение данных по заданному id
+    this.data.getProduct(this.id).subscribe((data) => {
+      this.product = data;
+      this.isLoading = false;
+    });
   }
 
   deleteProduct(): void {
-    this.data.deleteProduct(this.product.id!).subscribe(() => {
+    this.data.deleteProduct(this.id).subscribe(() => {
+      // программный переход к корневому маршруту
       this.router.navigate(['']);
-    })
-  } 
-    
+    });
+  }
+
+  change(): void {
+    this.allowed = true;
+  }
+
+  putProduct(): void {
+    this.data.updateProduct(this.product).subscribe(() => {
+      this.router.navigate(['']);
+    });
+  }
 }
-
-
